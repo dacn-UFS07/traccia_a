@@ -15,9 +15,7 @@ public class Client {
         input = new DataInputStream(socket.getInputStream());
         System.out.println("Messaggio Json ricevuto");
 
-        Gson gson = new Gson();
         String msg = input.readUTF();
-        //Product pr = gson.fromJson(msg, Product.class);
         System.out.println(msg);
         System.out.println("Product istanziato con i parametri del messaggio Json");
 

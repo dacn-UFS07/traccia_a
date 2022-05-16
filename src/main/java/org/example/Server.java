@@ -16,16 +16,12 @@ public class Server {
 
     public void startConnection(int port) throws IOException {
         server = new ServerSocket(port);
-
         System.out.println("ServerSocket instanziato");
         socket = server.accept();
-
         System.out.println("Socket instanziato e client connesso");
         out = new DataOutputStream(socket.getOutputStream());
-
-        Gson gson = new Gson();
+        Gson gson =new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(products);
-        System.out.println(products);
         out.writeUTF(json);
         out.close();
         out.flush();
