@@ -17,8 +17,8 @@ public class Client {
 
         Gson gson = new Gson();
         String msg = input.readUTF();
-        Product pr = gson.fromJson(msg, Product.class);
-        System.out.println(pr);
+        //Product pr = gson.fromJson(msg, Product.class);
+        System.out.println(msg);
         System.out.println("Product istanziato con i parametri del messaggio Json");
 
         input.close();

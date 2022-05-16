@@ -25,18 +25,17 @@ public class Server {
 
         Gson gson = new Gson();
         String json = gson.toJson(products);
-
+        System.out.println(products);
         out.writeUTF(json);
         out.close();
         out.flush();
         socket.close();
     }
 
-
     public static void main(String args[]) throws IOException {
+        buildProductList();
         Server server = new Server();
         server.startConnection(5000);
-        buildProductList();
     }
 
     static void buildProductList() {
